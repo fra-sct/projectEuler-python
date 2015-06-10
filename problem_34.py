@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from __future__ import print_function, division
+import sys
+if sys.version_info.major < 3:
+	input = raw_input
+from lib import *
+# Digit factorials
+# Problem 34
+# 145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
+# Find the sum of all numbers which are equal to the sum of the factorial of their digits.
+# Note: as 1! = 1 and 2! = 2 are not sums they are not included.
+Upper_Range = 362880 * 7
+#(9! = 362880) * 7 = 2540160 < 9999999
+#Answer = 40730
+
+def is_curious(n):
+	return sum(
+		map(
+			factorial,
+			map(
+				int,
+				str(n)
+				)
+			)
+		) == n
+
+if __name__ == "__main__":
+	print(
+		sum(
+			filter(
+				is_curious,
+				range(3, Upper_Range)
+				)
+			)
+		)
