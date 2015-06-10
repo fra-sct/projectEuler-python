@@ -10,9 +10,8 @@ import functools, itertools, operator
 # If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 # Find the sum of all the multiples of 3 or 5 below 1000.
 
-is_multiple_of_3 = lambda x: (x % 3) == 0
-is_multiple_of_5 = lambda x: (x % 5) == 0
-is_multiple_of_3_or_5 = lambda x: is_multiple_of_3(x) or is_multiple_of_5(x)
+is_multiple_of = lambda x: lambda y: (y % x) == 0
+is_multiple_of_3_or_5 = lambda x: is_multiple_of(3)(x) or is_multiple_of(5)(x)
 
 if __name__ == "__main__":
 	print(
