@@ -5,6 +5,7 @@ import sys, atexit, textwrap
 from lib import *
 from time import clock
 from contextlib import contextmanager
+from pprint import pprint
 
 Width = 79#60
 

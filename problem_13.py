@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from __future__ import print_function, division
-import sys
-if sys.version_info.major < 3:
-	input = raw_input
-from lib import *
-# Large sum
-# Problem 13
-# Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
+from euler import *
+problem = Problem(
+        id = 13,
+        name = "Large sum",
+        description = "Work out the first ten digits of the sum of the following one-hundred 50-digit numbers."
+        )
 
 Numbers = [
 	37107287533902102798797998220837590246510135740250,
@@ -112,9 +110,7 @@ Numbers = [
 	53503534226472524250874054075591789781264330331690,
 	]
 
-if __name__ == "__main__":
-	print(
-		str(
-			sum(Numbers)
-			)[:10]
-		)
+with setup(problem):
+	problem.answer = str(
+                sum(Numbers)
+        )[:10]
